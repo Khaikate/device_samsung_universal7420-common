@@ -50,6 +50,7 @@ AUDIOSERVER_MULTILIB := 32
 #
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_PHONY_TARGETS := true
+ALLOW_MISSING_DEPENDENCIES=TRUE
 
 #
 # APEX
@@ -184,6 +185,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7420
 TARGET_LINUX_KERNEL_VERSION := 3.10
+TARGET_KERNEL_CONFIG := lineageos_zenlte_defconfig
 
 ## Bootimage
 BOARD_CUSTOM_BOOTIMG := true
@@ -194,6 +196,17 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x10008000 --ramdisk_offset 0x11000000 --tags_offset 0x10000100
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+
+# GCC toolchains
+KERNEL_TOOLCHAIN := /hdd/nad/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+
+KERNEL_TOOLCHAIN_ARM32 := /hdd/nad/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX_ARM32 := arm-linux-androideabi-
+
+# Force GCC toolchains
+export CROSS_COMPILE=$(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX)
+export CROSS_COMPILE_ARM32=$(KERNEL_TOOLCHAIN_ARM32)/$(KERNEL_TOOLCHAIN_PREFIX_ARM32)
 
 #
 # Manifest
