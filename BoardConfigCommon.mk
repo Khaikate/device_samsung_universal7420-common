@@ -184,6 +184,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7420
 TARGET_LINUX_KERNEL_VERSION := 3.10
+TARGET_KERNEL_CONFIG := lineageos_zenltetmo_defconfig
 
 ## Bootimage
 BOARD_CUSTOM_BOOTIMG := true
