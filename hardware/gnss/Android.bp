@@ -22,7 +22,6 @@ cc_library_shared {
     shared_libs: [
         "liblog",
         "libhidlbase",
-        "libhidltransport",
         "libutils",
         "android.hardware.gnss@1.0",
         "libhardware",
