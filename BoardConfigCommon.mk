@@ -115,8 +115,6 @@ TARGET_LD_SHIM_LIBS += \
 
 #
 # Charger
-#
-#WITH_LINEAGE_CHARGER := false
 BACKLIGHT_PATH := /sys/devices/13900000.dsim/backlight/panel/brightness
 BOARD_BATTERY_DEVICE_NAME := battery
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -163,15 +161,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/gpsd=27 \
     /vendor/bin/gpsd=27
 
-#
-# Hardware Classes
-#
-## LineageOS HW
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
-    org.lineageos.hardware|device/samsung/universal7420-common/lineagehw|**/*.java
-
-#
 # Init
 #
 TARGET_INIT_VENDOR_LIB := libinit_sec

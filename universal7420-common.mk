@@ -89,7 +89,6 @@ PRODUCT_PACKAGES += \
 
 ## Apps
 PRODUCT_PACKAGES += \
-	Snap \
 	Gcam
 
 #
@@ -303,11 +302,6 @@ PRODUCT_PACKAGES += \
 ## Common
 DEVICE_PACKAGE_OVERLAYS += device/samsung/universal7420-common/overlay
 
-## ROM-specific
-ifneq ($(NEXUS_VERSION),)
-  DEVICE_PACKAGE_OVERLAYS += device/samsung/universal7420-common/overlay-nexus
-endif
-
 #
 # Packages
 #
@@ -409,11 +403,6 @@ PRODUCT_PACKAGES += \
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isolated_storage=false
-
-#
-# Synapse
-#
-# include device/samsung/universal7420-common/synapse/synapse.mk
 
 #
 # Touch
