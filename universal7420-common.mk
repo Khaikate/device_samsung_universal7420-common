@@ -89,7 +89,8 @@ PRODUCT_PACKAGES += \
 
 ## Apps
 PRODUCT_PACKAGES += \
-	Snap
+	Snap \
+	Gcam
 
 #
 # Configstore
@@ -435,12 +436,6 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	resize2fs_static \
 	setup_fs
-
-#
-# Trust
-#
-#PRODUCT_PACKAGES += \
-#    vendor.lineage.trust@1.0-service
 
 #
 # USB
