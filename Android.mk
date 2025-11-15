@@ -14,10 +14,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+LOCAL_PATH := device/samsung/universal7420-common
 
 ifeq ($(BOARD_VENDOR),samsung)
-  ifneq ($(filter $(TARGET_DEVICE_IS_ZERO) $(TARGET_DEVICE_IS_NOBLE_ZEN),true),)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-  endif
+ifneq ($(filter zeroflte zerofltedv zerofltemtr zerofltespr zerofltetmo zerofltexx zeroltetmo zerolte zeroltexx zerofltebmc zeroltebmc zeroltecan zerofltecan noblelte nobleltecan nobleltedd nobleltedv nobleltejv nobleltektt nobleltelgt noblelteskt nobleltespr nobleltetmo nobleltextc nobleltezt zenlte zenltecan zenltedd zenltedv zenltejv zenltektt zenltelgt zenlteskt zenltetmo zenltexx zenltezt, $(TARGET_DEVICE)),)
+
+  subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
+  $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
+
+endif
 endif

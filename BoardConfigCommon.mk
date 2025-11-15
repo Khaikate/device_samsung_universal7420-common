@@ -89,8 +89,6 @@ TARGET_NO_BOOTLOADER := true
 #
 EXTENDED_FONT_FOOTPRINT := true
 PRODUCT_SKIP_FINGERPRINT_FROM_FILE := true
-TARGET_UNOFFICIAL_BUILD_ID := TeamNexus
-
 TARGET_SPECIFIC_HEADER_PATH := \
 	$(LOCAL_PATH)/include
 
@@ -161,11 +159,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/gpsd=27 \
     /vendor/bin/gpsd=27
 
-# Init
-#
-TARGET_INIT_VENDOR_LIB := libinit_sec
-TARGET_UNIFIED_DEVICE := true
-
 #
 # Kernel
 #
@@ -231,9 +224,9 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/configs/config.fs
 #
 # Radio
 #
-BOARD_PROVIDES_LIBRIL := true
+BOARD_MODEM_TYPE := ss333
+TARGET_USES_VND_SECRIL := true
 ENABLE_VENDOR_RIL_SERVICE := true
-SIM_COUNT := 2
 
 #
 # Recovery
@@ -363,9 +356,6 @@ BOARD_USES_FIMGAPI_V5X := true
 # SCALER
 BOARD_USES_DEFAULT_CSC_HW_SCALER := true
 BOARD_USES_SCALER_M2M1SHOT := true
-
-# inherit target conditionals
--include device/samsung/universal7420-common/target.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/universal7420-common/BoardConfigVendor.mk
