@@ -357,7 +357,7 @@ PRODUCT_PACKAGES += \
 	init.rilchip.sh \
 	init.samsungexynos7420.rc \
 	init.samsungexynos7420.usb.rc \
-        init.sensors.rc \
+    init.sensors.rc \
 	init.recovery.samsungexynos7420.rc \
 	ueventd.samsungexynos7420.rc
 
@@ -413,9 +413,6 @@ PRODUCT_PACKAGES += \
 #
 # Tools
 #
-
-PRODUCT_PACKAGES += \
-	resetprop.universal7420   # Required for setting ro.*-properties for dual-SIM support
 
 PRODUCT_HOST_PACKAGES += \
         dtbhtoolExynos
