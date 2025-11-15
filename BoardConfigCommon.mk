@@ -216,8 +216,7 @@ BOARD_NFC_HAL_SUFFIX := universal7420.unused
 #
 # Shim
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
-
+      /system/lib64/libstagefright.so|libstagefright_shim.so
 #
 # OTA
 #
