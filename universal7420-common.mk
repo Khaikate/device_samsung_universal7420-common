@@ -410,7 +410,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	vendor.lineage.touch@1.0-service.samsung
 
+#
 # Tools
+#
+
+PRODUCT_PACKAGES += \
+	resetprop.universal7420   # Required for setting ro.*-properties for dual-SIM support
 
 PRODUCT_HOST_PACKAGES += \
         dtbhtoolExynos
