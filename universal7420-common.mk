@@ -344,9 +344,12 @@ PRODUCT_PACKAGES += \
 	android.hardware.radio.deprecated@1.0 \
 	modemloader
 
-#
+#APN config
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/ril/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
+	$(LOCAL_PATH)/configs/ril/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
+
 # Ramdisk
-#
 PRODUCT_PACKAGES += \
 	fstab.samsungexynos7420 \
 	init.baseband.rc \
